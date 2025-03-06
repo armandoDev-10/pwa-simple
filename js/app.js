@@ -27,12 +27,11 @@ const showCoffees = () => {
   
   document.addEventListener("DOMContentLoaded", showCoffees)
 
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then(res => console.log("service worker registrado"))
-        .catch(err => console.log("service worker not registered", err))
-    })
-  }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    console.log('Service Worker registration successful with scope:', registration.scope);
+  }).catch(function(error) {
+    console.log('Service Worker registration failed:', error);
+  });
+}
   
