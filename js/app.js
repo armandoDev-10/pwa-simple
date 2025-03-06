@@ -1,12 +1,3 @@
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function() {
-      navigator.serviceWorker
-        .register("/serviceWorker.js")
-        .then(res => console.log("service worker registered"))
-        .catch(err => console.log("service worker not registered", err))
-    })
-  }
-  
 const container = document.querySelector(".container")
 const coffees = [
   { name: "Perspiciatis", image: "images/coffee1.jpg" },
@@ -35,4 +26,13 @@ const showCoffees = () => {
   }
   
   document.addEventListener("DOMContentLoaded", showCoffees)
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker
+        .register("/serviceWorker.js")
+        .then(res => console.log("service worker registrado"))
+        .catch(err => console.log("service worker not registered", err))
+    })
+  }
   
